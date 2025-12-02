@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Книжковий Рай</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Встановлення загальних стилів */
+        body {
+            font-family: 'Roboto', sans-serif; /* Шрифт для тексту */
+            color: #333; /* Колір тексту */
+            background-color: #eaeaea; /* Колір фону сторінки */
+            margin: 0; /* Обнулення зовнішніх відступів */
+            padding: 0;
+            font-size: 16px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Lora', serif; /* Шрифт для заголовків */
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        /* ------------------------------------------- */
+        /* Секція section-main */
+        /* ------------------------------------------- */
+        .section-main {
+            background-color: #556b2f; /* Колір фону (основний зелений) */
+            padding-top: 120px;
+            padding-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Вирівнювання по центру (в стовпці) */
+        }
+
+        .section-main-logo {
+            width: 160px;
+        }
+
+        .section-main-title {
+            color: #fff;
+            font-size: 50px; /* Збільшений розмір для Lora */
+            font-weight: 700;
+            padding-top: 40px;
+            padding-bottom: 20px;
+        }
+
+        .section-main-subtitle {
+            color: #fff;
+            font-size: 22px;
+            padding-bottom: 40px;
+        }
+
+        .section-main-button {
+            background-color: #8fbc8f; /* Світло-зелений фон */
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 12px 25px; /* Внутрішні відступи */
+            border: none;
+            border-radius: 25px; /* Заокруглення */
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .section-main-button:hover {
+            background-color: #7aa77a; /* Зміна кольору при наведенні */
+        }
+
+
+        /* ------------------------------------------- */
+        /* Секція second-section */
+        /* ------------------------------------------- */
+        .second-section {
+            display: flex;
+            justify-content: center; /* Вирівнювання по центру */
+            align-items: flex-start; /* Вирівнювання елементів в контейнері по вертикалі */
+            padding: 100px 0;
+            gap: 100px; /* Простір між елементами */
+        }
+
+        .second-section-img {
+            width: 500px;
+            padding: 5px;
+            border: 5px solid #556b2f;
+            border-radius: 20px;
+            margin-top: 30px;
+        }
+
+        .second-section-info {
+            max-width: 600px;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .second-section-title {
+            color: #8fbc8f;
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+
+        .second-section-title:nth-of-type(2) {
+            color: #556b2f;
+            font-size: 32px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .second-section-text {
+            color: #666;
+            font-size: 18px;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        .second-section-name {
+            color: #556b2f;
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .second-section-name2 {
+            color: #666;
+            font-weight: 400;
+            text-transform: lowercase; 
+        }
+
+
+        /* ------------------------------------------- */
+        /* Секція third-section */
+        /* ------------------------------------------- */
+        .third-section {
+            background-color: #f5f5f5; /* Світло-сірий фон */
+            padding: 50px 0 100px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Вирівнювання по центру */
+        }
+
+        .section-subtitle {
+            color: #8fbc8f;
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            color: #556b2f;
+            font-size: 32px;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+        }
+
+        .third-section-books {
+            display: flex;
+            justify-content: center; /* Вирівнювання по центру */
+            flex-wrap: wrap; /* Перенесення на новий рядок */
+            gap: 20px; /* Простір між картками */
+            width: 80%; /* Обмеження ширини контейнера, щоб вмістити 4 картки */
+        }
+
+        .book-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Додаємо тінь для об'єму */
+            width: 200px; /* Фіксована ширина картки */
+            text-align: center;
+        }
+
+        .book-img {
+            width: 200px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .book-title {
+            color: #556b2f;
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .book-author {
+            color: #666;
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+
+        .book-price {
+            color: #8fbc8f;
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+
+        /* ------------------------------------------- */
+        /* Секція footer */
+        /* ------------------------------------------- */
+        .footer {
+            background-color: #2f4f4f; /* Темний колір фону */
+            padding: 100px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+        }
+
+        .footer-title {
+            color: #fff;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+            width: 80%;
+            margin-top: 30px;
+        }
+
+        .footer-text-block {
+            max-width: 600px;
+        }
+
+        .footer-text {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        .footer-text-main {
+            font-weight: 700;
+        }
+
+        .footer-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-title {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .form-input {
+            width: 400px;
+            height: 40px;
+            padding: 0 10px;
+            margin-top: 0;
+            margin-bottom: 0;
+            color: #fff;
+            background-color: #2f4f4f;
+            border: 1px solid #fff;
+            border-radius: 8px;
+            box-sizing: border-box; /* Враховує padding і border у загальній ширині/висоті */
+        }
+
+        /* Стилізація placeholder */
+        .form-input::placeholder {
+            color: #fff;
+            opacity: 0.7;
+        }
+
+        .footer-button {
+            margin-top: 30px;
+            background-color: #8fbc8f;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .footer-button:hover {
+            background-color: #7aa77a;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="section-main">
+        <img class="section-main-logo" src="https://i.ibb.co/351WZV5q/IMG-20251202-205102-800.jpg" alt="Логотип">
+        <h1 class="section-main-title">Книжковий Рай</h1>
+        <h2 class="section-main-subtitle">Відкрий для себе наступну чудову книгу</h2>
+        <button class="section-main-button" type="button">Дізнатися більше</button>
+    </main>
+
+    <section class="second-section">
+        <img src="https://i.ibb.co/351WZV5q/IMG-20251202-205102-800.jpg" alt="Зображення бібліотеки" class="second-section-img">
+        <div class="second-section-info">
+            <h3 class="second-section-title">ЛАСКАВО ПРОСИМО ДО КНИЖКОВОГО РАЮ</h3>
+            <h3 class="second-section-title">Про нашу бібліотеку</h3>
+            <p class="second-section-text">Ласкаво просимо до нашої бібліотеки, де ви знайдете широкий вибір книг для будь-якого віку та вподобань. Приходьте та насолоджуйтеся читанням у затишній атмосфері!</p>
+            
+            <p class="second-section-text">
+                <span class="second-section-name">ІВАН ІВАНЕНКО</span> – <span class="second-section-name2">засновник Книжкового Раю</span>
+            </p>
+        </div>
+    </section>
+
+    <section class="third-section">
+        <h3 class="section-subtitle">РЕКОМЕНДОВАНІ КНИГИ</h3>
+        <h3 class="section-title">Наша колекція</h3>
+        <div class="third-section-books">
+            <div class="book-card">
+                <img src="https://i.ibb.co/S4ZQ18ym/IMG-20251202-203511-152.jpg" alt="книга 1" class="book-img">
+                <h4 class="book-title">Маленький принц</h4>
+                <p class="book-author">Антуан де Сент Екзюпері</p>
+                <p class="book-price">150 грн/р</p>
+            </div>
+            <div class="book-card">
+                <img src="https://i.ibb.co/4n3KQFX8/IMG-20251202-203511-103.jpg" alt="книга 2" class="book-img">
+                <h4 class="book-title">1984</h4>
+                <p class="book-author">Джордж Орвелл</p>
+                <p class="book-price">200 грн/р</p>
+            </div>
+            <div class="book-card">
+                <img src="https://i.ibb.co/rfwNL5DF/IMG-20251202-203511-225.jpg" alt="книга 3" class="book-img">
+                <h4 class="book-title">Гордість і упередження</h4>
+                <p class="book-author">Джейн Остін</p>
+                <p class="book-price">180 грн/р</p>
+            </div>
+            <div class="book-card">
+                <img src="https://i.ibb.co/1G0qCfwS/your-filename-here.jpg" alt="книга 4" class="book-img">
+                <h4 class="book-title">Алхімік</h4>
+                <p class="book-author">Пауло Коельо</p>
+                <p class="book-price">165 грн/р</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <h3 class="section-subtitle footer-title">КНИЖКОВИЙ РАЙ</h3>
+        <div class="footer-content">
+            <div class="footer-text-block">
+                <h3 class="section-title footer-title">Приєднуйтесь до нашої спільноти</h3>
+                <p class="footer-text">
+                    <span class="footer-text-main">Підпишіться на нашу розсилку, щоб отримувати останні новини про новинки, ексклюзивні пропозиції та багато іншого.</span><br>
+                    Для запитів, будь ласка, зв'яжіться з нами за номером (+380) 123-456-789.
+                </p>
+            </div>
+
+            <form action="" class="footer-form">
+                <h4 class="form-title">Ім'я</h4>
+                <input type="text" id="name" name="name" class="form-input" placeholder="Ім'я">
+                
+                <h4 class="form-title">Електронна пошта</h4>
+                <input type="email" id="email" name="email" class="form-input" placeholder="Електронна пошта">
+                
+                <h4 class="form-title">Телефон</h4>
+                <input type="tel" id="phone" name="phone" class="form-input" placeholder="Телефон">
+                
+                <button class="footer-button" type="submit">Підписатися</button>
+            </form>
+        </div>
+    </footer>
+
+</body>
+</html>
